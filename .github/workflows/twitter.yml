@@ -23,7 +23,13 @@ jobs:
       - uses: actions/checkout@v4
 
       # Runs a single command using the runners shell
-      - name: Run a python script for the Twitter bot.
+      - name: Run a python script for the Twitter bot
+        env: 
+          BEARER_TOKEN: ${{ secrets.BEARER_TOKEN }}
+          CONSUMER_KEY: ${{ secrets.CONSUMER_KEY }}
+          CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
         run: |
           pip install -r .github/workflows/requirements.txt
           python .github/workflows/twitter.py
