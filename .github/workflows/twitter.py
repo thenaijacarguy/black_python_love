@@ -1,5 +1,3 @@
-pip install -r requirements.txt
-
 import tweepy
 import requests
 from bs4 import BeautifulSoup
