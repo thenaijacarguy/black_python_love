@@ -28,4 +28,6 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a python script for the Twitter bot.
-        run: python .github/workflows/twitter.py
+        run: |
+          python pip install -r requirements.txt
+          .github/workflows/twitter.py
